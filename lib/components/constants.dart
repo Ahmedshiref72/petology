@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
+
 import '../reposoteries/network/local/cache_helper.dart';
 
 const Color kBgColor = Color(0xFFecf5fb);
@@ -40,7 +41,7 @@ void printFullText(String text) {
   final pattern = RegExp('.{1,800}');
   pattern.allMatches(text).forEach((match) => print(match.group(0)));
 }
-int index = 0;
+int index=0 ;
 int catId= 1;
 
 String token = '';

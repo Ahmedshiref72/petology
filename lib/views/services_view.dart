@@ -7,6 +7,7 @@ import '../reposoteries/component/defaultFormFeild_component/defaultFormFeild_co
 import '../reposoteries/component/drop_down_component/drop_down_component.dart';
 import '../reposoteries/constants/constants.dart';
 import '../view_models/services_view_model/services_view_model_cubit.dart';
+import '../view_models/services_view_model/services_view_model_state.dart';
 
 class ServicesView extends StatelessWidget {
   @override
@@ -16,11 +17,11 @@ class ServicesView extends StatelessWidget {
     var phoneController = TextEditingController();
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
-    return BlocConsumer<ServicesViewModelCubit,ServicesViewModelState>(
+    return BlocConsumer<ServicesCubit,ServicesState>(
         listener: (BuildContext context, state) {  },
         builder: (BuildContext context, Object? state)
         {
-          var cubit=ServicesViewModelCubit.get(context);
+          var cubit=ServicesCubit.get(context);
           return Stack(
             children: [
               Positioned(

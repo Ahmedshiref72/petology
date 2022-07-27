@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
 import '../components/components.dart';
+import '../components/constants.dart';
+import '../reposoteries/component/general_component/component.dart';
 import '../reposoteries/component/grid_view_component/grid_view_item.dart';
 import '../view_models/about_us_Cubit/about_us_cubit.dart';
 import '../view_models/about_us_Cubit/states.dart';
+import 'home_screen.dart';
 
 class AboutUSView extends StatefulWidget {
   @override
@@ -16,19 +19,20 @@ class _AboutUSViewState extends State<AboutUSView> {
   Widget build(BuildContext context) {
     var titleController = TextEditingController();
     var bodyController = TextEditingController();
-
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
     var size = MediaQuery.of(context).size;
+    var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
 
     return BlocConsumer<AboutUsCubit, AboutUsState>(
       listener: (context, state) {
-        if (state is AboutUsSuccessState) {
-          var model = AboutUsCubit.get(context).aboutsModel;
 
-          titleController.text = model.title as String;
-          bodyController.text = model.body as String;
-        }
+        var model = AboutUsCubit.get(context).aboutsModel;
+
+        titleController.text = model.title as String;
+        bodyController.text = model.body as String;
+
       },
       builder: (context, state) {
         return Column(
@@ -218,7 +222,13 @@ class _AboutUSViewState extends State<AboutUSView> {
                 ),
                 //cat
                 InkWell(
-                  onTap: (){},
+                  onTap: (){
+                    print('asa');
+
+                    AboutUsCubit.get(context).changeScreen(6);
+                    navigateAndEnd(context, HomeView());
+
+                  },
                   child: Padding(
                     padding: EdgeInsets.only(left:size.width*.37,top:200 ),
                     child: Container(
@@ -308,13 +318,22 @@ class _AboutUSViewState extends State<AboutUSView> {
                     maxCrossAxisExtent: 300,
                   ),
                   itemBuilder: (context, index) {
-                    return BuildCard(context);
+                    return
+
+                      BuildCard(context);
+
                   },
                 ),
               ),
             ),
             myDefaultButton2(
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    index=6;
+                  });
+                  AboutUsCubit.get(context).changeScreen(6);
+                  navigateAndEnd(context, HomeView());
+                },
                 color: HexColor('#492F24'),
                 textColor: HexColor('#D8BDA3'),
                 text: 'Show more',

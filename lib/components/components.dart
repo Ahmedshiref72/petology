@@ -549,7 +549,7 @@ Widget myDefaultButton2({
   double? hight,
   double? width,
   String? text,
-  Function? onPressed,
+  Function()? onPressed,
   Color? color,
   Color? textColor,
   String? image,
@@ -563,7 +563,7 @@ Widget myDefaultButton2({
       border:Border.all(color: Colors.grey)
   ),
   child: MaterialButton(
-      onPressed: ()=>onPressed,
+      onPressed: onPressed,
       child:Row(
         children: [
           if(icon==false)Padding(

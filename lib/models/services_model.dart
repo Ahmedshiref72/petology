@@ -1,5 +1,5 @@
 class ServicesModel {
-  int? categoryId;
+  double? categoryId;
   String? imageBase64;
   String? location;
   String? phoneNumber;
@@ -14,12 +14,5 @@ class ServicesModel {
     phoneNumber = json['phoneNumber'];
   }
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['categoryId'] = this.categoryId;
-    data['imageBase64'] = this.imageBase64;
-    data['location'] = this.location;
-    data['phoneNumber'] = this.phoneNumber;
-    return data;
-  }
+
 }
