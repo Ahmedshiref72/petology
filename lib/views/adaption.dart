@@ -87,7 +87,7 @@ class AdaptionContent extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 15,
+          height: 16,
         ),
         Text(
 
