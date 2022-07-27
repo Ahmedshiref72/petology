@@ -552,7 +552,8 @@ Widget myDefaultButton2({
   Function? onPressed,
   Color? color,
   Color? textColor,
-  String? image
+  String? image,
+  bool? icon=false,
 })=>Container(
   height:hight ,
   width:width ,
@@ -565,7 +566,7 @@ Widget myDefaultButton2({
       onPressed: ()=>onPressed,
       child:Row(
         children: [
-          Padding(
+          if(icon==false)Padding(
             padding: const EdgeInsets.only(left:15.0),
             child: Image(image:AssetImage('$image',),
               width:35 ,
@@ -573,11 +574,20 @@ Widget myDefaultButton2({
           ),
           SizedBox(width:20,),
           Center(
-            child: Text('$text',style: TextStyle(
-                color:textColor,
-                fontWeight: FontWeight.bold,
-                fontSize: 23
-            ),
+            child: Row(
+              children: [
+                Text('$text',style: TextStyle(
+                    color:textColor,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 23
+                ),
+                ),
+                if(icon==true)
+                  SizedBox(width: 170
+                    ,),
+                if(icon==true)
+                  Icon(Icons.arrow_forward_ios_rounded)
+              ],
             ),
           ),
         ],

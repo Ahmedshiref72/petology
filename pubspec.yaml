@@ -35,12 +35,12 @@ dependencies:
   path_provider: any
   bloc: ^7.0.0
   flutter_bloc:
-  dio:
+  dio: ^4.0.6
   shared_preferences:
   webview_flutter:
   smooth_page_indicator:
   carousel_slider:
-  http: ^0.12.2
+  http: ^0.13.2
   jumping_bottom_nav_bar: ^0.1.0
   material_design_icons_flutter: ^4.0.5955
   curved_navigation_bar: ^1.0.3

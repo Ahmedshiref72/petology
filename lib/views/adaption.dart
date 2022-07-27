@@ -6,21 +6,14 @@ import 'package:hexcolor/hexcolor.dart';
 class AdaptionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-
-      child: Column(
-        children: [
-          DecorationStyle(),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                AdaptionContent(),
-              ],
-            ),
-          ),
-        ],
-      ),
+    return Column(
+      children: [
+        DecorationStyle(),
+        Padding(
+          padding: const EdgeInsets.all(50),
+          child: AdaptionContent(),
+        ),
+      ],
     );
   }
 }
@@ -35,7 +28,14 @@ class DecorationStyle extends StatelessWidget {
         Container(
           height: adaptionContentSize.height * 0.7,
           width: adaptionContentSize.width,
-          color: HexColor('180701'),
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.topLeft,
+                  colors: [
+                    HexColor('#180701'),
+                    HexColor('#654538'),
+                  ])),
         ),
         Center(
           child: Column(
@@ -90,19 +90,16 @@ class AdaptionContent extends StatelessWidget {
           height: 16,
         ),
         Text(
-
-          "As a general rule, puppies and young dogs burn more calories, so they \nneed a greater quantity of food that is higher in protein and fat. Older, less \nactive dogs require fewer calories to remain healthy.\n\n"
-              "Richard H. Pitcairn, DVM, PhD, author of Dr. Pitcairn’s Complete Guide to \nNatural Health for Dogs and Cats, believes the most reliable approach is to \nfeed what seems to be a reasonable amount and monitor his body weight.\n\n"
-              "You should be able to feel your pet’s ribs easily as you slide your hand \nover his sides,” Pitcairn says. “If you can’t, he’s probably too heavy, so \nbegin to feed a smaller quantity.\n\n"
-              "If you’re using a commercial pet food, beware of the “feeding guidelines” on the bag or box.\nIt lists different weights and the corresponding amount of food to feed your dog to maintain that weight,\nand should be used only as a rough guideline.\n\n"
+          "As a general rule, puppies and young dogs burn more calories, so they need a greater quantity of food that is higher in protein and fat. Older, less active dogs require fewer calories to remain healthy.\n\n"
+              "Richard H. Pitcairn, DVM, PhD, author of Dr. Pitcairn’s Complete Guide to Natural Health for Dogs and Cats, believes the most reliable approach is to feed what seems to be a reasonable amount and monitor his body weight.\n\n"
+              "You should be able to feel your pet’s ribs easily as you slide your hand over his sides,” Pitcairn says. “If you can’t, he’s probably too heavy, so begin to feed a smaller quantity.\n\n"
+              "If you’re using a commercial pet food, beware of the “feeding guidelines” on the bag or box.It lists different weights and the corresponding amount of food to feed your dog to maintain that weight,\nand should be used only as a rough guideline.\n\n"
               "Starting at the low end of the suggested guidelines and then monitoring your dog for hunger and \nbody condition is a good way to proceed.\nDifferent Portions for Different Pooches Though it may sound counterintuitive, as a general rule, \n\n ",
           style: TextStyle(
             color: HexColor("492F24"),
-            fontSize: 20,
-
+            fontSize: 30,
 
           ),
-
         ),
       ],
     );
