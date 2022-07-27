@@ -12,7 +12,7 @@ class GetAdaptionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
     final h = MediaQuery.of(context).size.height;
-    List items = ["Dog", "Cat","Reda", "Ehab"];
+    List items = ["Dog", "Cat","Reda", "shefo"];
     return  Stack(
         children: [
           Positioned(

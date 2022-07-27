@@ -10,12 +10,7 @@ class AdaptionCubit extends Cubit<AdaptionState> {
   AdaptionCubit() : super(AdaptionInitial());
 
   static AdaptionCubit get(context) => BlocProvider.of(context);
-
-
-
   late FilterGridModel filterGridModel;
-
-
   Future getListData() async{
     emit(FilterGridLoadingState());
 

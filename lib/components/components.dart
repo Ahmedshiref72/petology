@@ -575,6 +575,7 @@ Widget myDefaultButton2({
           SizedBox(width:20,),
           Center(
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text('$text',style: TextStyle(
                     color:textColor,

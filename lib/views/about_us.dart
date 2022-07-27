@@ -1,11 +1,7 @@
-import 'package:carousel_slider/carousel_controller.dart';
-import 'package:carousel_slider/carousel_options.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:petology/components/components.dart';
-
-import '../reposoteries/component/button_custom_component/ButtonCustom.dart';
+import '../reposoteries/component/grid_view_component/grid_view_item.dart';
 
 class AboutUSView extends StatefulWidget {
   @override
@@ -16,8 +12,8 @@ class _AboutUSViewState extends State<AboutUSView> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    var width = MediaQuery.of(context).size.width;
-    var height = MediaQuery.of(context).size.height;
+    final w = MediaQuery.of(context).size.width;
+    final h = MediaQuery.of(context).size.height;
     return Column(
       children: [
         Stack(
@@ -137,142 +133,124 @@ class _AboutUSViewState extends State<AboutUSView> {
                   padding:  EdgeInsets.symmetric(vertical: size.width*.1,horizontal: size.height*.1),
                   child: Column(
                     children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: size.width * .05),
-                        child: Stack(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(15.0),
+                      Stack(
+                        children: [
+                          Text(
+                            'About Petology ',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 40,
+                                color: Colors.black),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: size.height * .2, left: size.width * .01),
+                            child: Container(
+                              width: size.width * .26,
+                              height: size.height * .6,
                               child: Text(
-                                'About Petology ',
+                                'Lorem ipsum dolor sit amet,'
+                                    ' consetetur sadipscing elitr,'
+                                    ' sed diam nonumy eirmod tempor invidunt'
+                                    ' ut labore et dolore magna aliquyam erat, '
+                                    'sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 40,
-                                    color: Colors.black),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                  top: size.height * .2, left: size.width * .01),
-                              child: Container(
-                                width: size.width * .26,
-                                height: size.height * .6,
-                                child: Text(
-                                  'Lorem ipsum dolor sit amet,'
-                                      ' consetetur sadipscing elitr,'
-                                      ' sed diam nonumy eirmod tempor invidunt'
-                                      ' ut labore et dolore magna aliquyam erat, '
-                                      'sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea.',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: Colors.black,
-                                  ),
+                                  fontSize: 18,
+                                  color: Colors.black,
                                 ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
                 ),
-
-
               ],
             ),
           ],
         ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '  Our friends who \nlooking for a house',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40,
+                  color: Colors.black),
+            ),
+          ],
+        ),
         Container(
-          width: size.width,
-          height: size.height*.9,
-          color: Colors.white,
-          child: Column(
-            children: [
-              Text(
-                'Our friends who looking for a house ',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40,
-                    color: Colors.black
-                ),
-              ),
-              Container(
-                width: size.width*.2,
-                height: size.height*.3,
-                child: Card(
-                  color: Color(0xffeaeaea),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(20),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          //   height: height * .25,
-                          child: Stack(
-                            children: [
-                              AspectRatio(
-                                aspectRatio: 1,
-                                child: Image(
-                                  image: AssetImage(
-                                    "assets/images/elsa.png",
-                                  ),
-                                  width: width * 0.4,
-                                  height:height * 0.4,
-                                ),
-                              ),
-                              Positioned(
-                                top: 10,
-                                right: 5,
-                                child: IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.favorite,
-                                    size: 22,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Text(
-                          "Elsa",style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 3),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              ButtonCustom(
-                                title: "See More",
-                                onTap: () {},
-                                height: height * .04,
-                                width: width * .1,
-                                icon: Icon(Icons.abc),
-                                color: Colors.black,
-                                color2: Colors.white,
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              )
+          height: h * .6,
+          width: w * .6,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: GridView.builder(
 
-            ],
+              itemCount: 3,
+              gridDelegate:
+              const SliverGridDelegateWithMaxCrossAxisExtent(
+                childAspectRatio: .8,
+                mainAxisSpacing: 9,
+                crossAxisSpacing: 6.0,
+                maxCrossAxisExtent: 300,
+              ),
+              itemBuilder: (context, index) {
+                return BuildCard(context);
+              },
+            ),
           ),
         ),
 
+        myDefaultButton2(
+            onPressed: () {},
+            color:HexColor('#492F24'),
+            textColor: HexColor('#D8BDA3'),
+            text: 'Show more',
+            width: size.width * .24,
+            hight: size.height * .1,
+            icon: true),
+        Container(
+          color: HexColor('#F1F1F1'),
+          width: size.width,
+          height: size.height*1,
+          child: Padding(
+            padding: const EdgeInsets.all(25),
+            child: Column(
+              children: [
+                Text(
+                  'How to take care of \n     your friends? ',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 40,
+                      color: Colors.black),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: Container(
+                    width: size.width,
+                    height: size.height*.3,
+                    child: Image(
+                      image: AssetImage('assets/images/CompositeLayer (3).png'),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: Container(
+                    width: size.width,
+                    height: size.height*.3,
+                    child: Image(
+                      image: AssetImage('assets/images/CompositeLayer (4).png'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
 
       ],
     );
