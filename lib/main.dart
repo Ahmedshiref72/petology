@@ -70,8 +70,8 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+        title: 'petology',
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
         home: ScreenTypeLayout(
           mobile: HomeView(),
           desktop:Builder(

@@ -55,9 +55,6 @@ class RequestCubit extends Cubit<RequestStates> {
         'location': location,
         'category': category,
         'phone': phone,
-
-
-
         'goodWith': goodWith,
       },
     ).then((value) {
